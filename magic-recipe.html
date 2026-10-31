@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عنده وصفة سحرية.. بس مو دواء!</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;padding:25px 14px;
+font-family:Tahoma,Arial,sans-serif;
+background:#f5f3ed;color:#294b49;
+text-align:center
+}
+.card{
+max-width:520px;margin:20px auto;padding:30px 22px;
+background:#fffefa;border:1px solid #e4e7dc;
+border-radius:26px;box-shadow:0 10px 35px #294b4910
+}
+.icon{font-size:48px}
+.tag{
+display:inline-block;background:#e4eee5;color:#416b58;
+padding:8px 15px;border-radius:30px;font-size:13px
+}
+h1{font-size:27px;line-height:1.8;margin:20px 0 12px}
+h1 span{color:#c68b60}
+.intro{color:#727d76;font-size:15px;line-height:2}
+.info{
+background:#f0f5ee;border-radius:18px;padding:20px;
+margin:24px 0;text-align:right;line-height:2.1
+}
+.info h2{font-size:18px;margin-top:0}
+.question{font-size:18px;line-height:1.9;font-weight:bold;margin:25px 0 16px}
+.option{
+width:100%;padding:15px 12px;margin:7px 0;
+border:1px solid #dce4da;border-radius:13px;background:white;
+color:#294b49;font-family:inherit;font-size:15px;cursor:pointer
+}
+.option:hover{background:#edf4ec}
+#result{
+display:none;margin-top:18px;padding:17px;border-radius:15px;
+line-height:2;background:#edf4ec
+}
+#result button{
+margin-top:10px;border:0;background:#416b58;color:white;
+padding:11px 20px;border-radius:10px;font-family:inherit;cursor:pointer
+}
+footer{color:#92988f;font-size:12px;margin-top:25px}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="icon">🌿</div>
+<span class="tag">٦٠ ثانية.. تفرق</span>
+<h1>عنده وصفة سحرية...<br><span>بس مو دواء!</span></h1>
+<p class="intro">وصفة تغيّر العادات، وتحمي الصحة،<br>وتبدأ بمعلومة صحيحة.</p>
+
+<section class="info">
+<h2>💡 اكتشف الوصفة</h2>
+أخصائي التثقيف الصحي يساعد الأفراد على فهم
+المعلومات الصحية، واتخاذ قرارات واعية،
+وتبنّي عادات يومية تسهم في الوقاية من الأمراض.
+</section>
+
+<div class="question">
+🧩 ما الوصفة الحقيقية التي يقدمها أخصائي التثقيف الصحي؟
+</div>
+
+<div id="options">
+<button class="option" onclick="answer(false)">أ) وصف الأدوية لعلاج المرض</button>
+<button class="option" onclick="answer(true)">ب) نشر الوعي ومساعدة الناس على تغيير سلوكهم الصحي</button>
+<button class="option" onclick="answer(false)">ج) إجراء العمليات الجراحية</button>
+</div>
+
+<div id="result" aria-live="polite" role="status"></div>
+<footer>معلومة صغيرة اليوم.. أثر أكبر غدًا ♡</footer>
+</main>
+
+<script>
+function answer(correct){
+const result=document.getElementById("result");
+result.style.display="block";
+if(correct){
+result.innerHTML="🎉 أحسنت! إجابة صحيحة<br>الوعي الصحي يساعدنا على اتخاذ قرارات أفضل وتبنّي عادات تحمي صحتنا.";
+document.getElementById("options").style.display="none";
+}else{
+result.innerHTML="🌱 إجابة غير صحيحة، حاولي مرة أخرى!<br><button onclick='resetQuiz()'>إعادة المحاولة</button>";
+}
+}
+function resetQuiz(){
+document.getElementById("result").style.display="none";
+}
+</script>
+</body>
+</html>
